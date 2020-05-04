@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tp6">
+  <ClassDiagramComponents>
+    <Class name="Cliente" package="tp6" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="ciudad" type="String" visibility="private"/>
+        <Field name="direccion" type="String" visibility="private"/>
+        <Field name="dni" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="ciudad"/>
+          <Argument type="String" name="direccion"/>
+          <Argument type="int" name="dni"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="getCiudad" returnType="String" visibility="public"/>
+        <Method name="getDireccion" returnType="String" visibility="public"/>
+        <Method name="getDni" returnType="int" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="setCiudad" returnType="void" visibility="public">
+          <Argument type="String" name="ciudad"/>
+        </Method>
+        <Method name="setDireccion" returnType="void" visibility="public">
+          <Argument type="String" name="direccion"/>
+        </Method>
+        <Method name="setDni" returnType="void" visibility="public">
+          <Argument type="int" name="dni"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Directorio" package="tp6" visibility="public" xPosition="684.0" yPosition="31.0">
+      <Fields>
+        <Field name="directorio" type="HashMap&lt;Integer, Cliente&gt;" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="agregarCliente" returnType="void" visibility="public">
+          <Argument type="int" name="telefono"/>
+          <Argument type="Cliente" name="cliente"/>
+        </Method>
+        <Method name="buscarCliente" returnType="Cliente" visibility="public">
+          <Argument type="int" name="telefono"/>
+        </Method>
+        <Method name="buscarTelefono" returnType="ArrayList&lt;Integer&gt;" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="buscarClientes" returnType="HashMap&lt;Integer, Cliente&gt;" visibility="public">
+          <Argument type="String" name="ciudad"/>
+        </Method>
+        <Method name="borrarCliente" returnType="void" visibility="public">
+          <Argument type="int" name="dni"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="directorio" source="tp6.Directorio" target="tp6.Cliente" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="HashMap&lt;Integer, Cliente&gt;"/>
+    <UseRelation source="tp6.Directorio" target="tp6.Cliente" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
